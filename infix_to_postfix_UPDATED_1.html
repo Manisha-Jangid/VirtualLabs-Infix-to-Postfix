@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+    <html lang="">
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VirtualLab</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+   <script src="https://www.promisejs.org/polyfills/promise-done-7.0.4.min.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        
+        
+ <script type="text/javascript">
+
+            $(document).ready(function()
+                                                      
+        {
+
+                            var counter = 1; //it will store the number of operator+1 
+
+                            while(counter<=10) 
+                            {
+            
+                           var newTextBoxDiv = $(document.createElement('div')).attr("id", 'TextBoxDiv' + counter);
+//name="textbox' + counter + '"
+                             newTextBoxDiv.after().html('<input type="text" name="' + counter + '" id="' + counter + '" value="" >');
+
+                            newTextBoxDiv.appendTo("#TextBoxesGroup");
+                            counter++;
+                                                                
+                            }});
+
+                          
+    </script>        
+    
+    <style>
+
+    .verticalNav 
+    {        
+        list-style-type: none;
+
+        padding: 0;
+
+        width: 20%;
+        background-color: #2799FA;
+        position: fixed;
+        height: 100%;
+        overflow: auto;
+    }
+
+    .verticalNavA 
+    {
+        margin-top: 20px ;
+        display: block;
+        padding-top: 10px ;
+        vertical-align: top;
+        text-decoration: none;
+        border-bottom: 1px solid #fff;
+        width: 340% ;
+        margin-right:auto ;
+        text-align: left ;
+    }
+
+
+
+    body  
+    {
+        margin: 0 ;
+    }   
+
+    .img-with-text 
+    {
+        text-align: justify ;
+        width: 50px ;
+    }
+
+    .img-with-text img 
+    {
+        display: block ;
+        margin:0 auto ;
+        padding-left: 55px ;
+        padding-bottom: 40px ;
+        text-align: center ;
+        padding-top: 25px ;
+
+
+    }
+
+
+    .img-with-text a 
+    {
+
+        padding-left: 100% ;
+        color: white ;
+
+    }
+
+    .img-with-text a:hover
+    {
+
+        background-color: white ;
+        color: black ;
+
+
+    }
+
+    ul 
+    {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden ;
+        background-color: #2799FA ;
+
+    }
+
+
+    li 
+    {
+
+        float:right ;
+
+    }
+
+
+    li a 
+    {
+        display:inline-block;
+
+        color:white ;
+        text-align: center ;
+        padding:20px 25px ;
+        text-decoration: none ;
+        font-size: 12px ;
+    }
+
+
+    li a:hover
+    {
+        background-color: white ;
+        color: black ;
+    }
+
+
+
+
+    h4 
+    {
+        padding-left: 300px ;
+        font-weight: 100;
+        padding-bottom: 30px ;
+        font-size: 30px ;
+        margin-right: 0;
+        padding-top: 100px ;
+    }
+
+    p 
+    {
+        padding-left: 300px ;
+        font-size: 20px ;
+    }
+
+
+    input[type=text],input[type=textBox] 
+    {
+
+
+        padding-left: 5px ;                
+        padding: 12px 20px;
+        margin-left: 300px ;
+        box-sizing: border-box;
+        border: 2px solid #2799FA ;
+        border-radius: 4px;
+
+    }
+
+    .b
+    {
+
+
+        padding-left: 5px ;                
+       
+        margin-left: 300px ;
+        border-radius: 4px;
+
+    }
+        
+         .horizontalNav {
+         
+          position: fixed;
+         top: 0;
+         width: 100%;
+             z-index: 500;
+            
+        }
+        
+        #stac{
+           
+            box-sizing: border-box;
+            white-space: pre-line;
+            width: 80% ;
+         
+        }
+         .work2 {
+             background-color: #2799FA; /* Green */
+             border: none;
+             color: white;
+             padding: 10px 25px;
+            text-align: center;
+            font-size: 16px;
+        } 
+        .work2:hover{
+            background-color: #0f89f2 ;
+             
+        }
+        
+         .mybody {
+            width:100% ;
+           
+        }
+        .infix_div {
+              
+              display: inline-block;
+              position: absolute;
+              left: 0;
+            
+            
+        }
+        
+         #TextBoxesGroup{
+           display: inline-block;
+            position: absolute;
+            border: none ;
+            right: 0;
+            width: 55%;
+            height: 100% ; 
+          
+          
+        }
+        
+
+    </style>
+
+
+    </head>
+
+    <body>
+
+        <ul class="horizontalNav">
+             <div class="img-with-textHH"> 
+                    <li><a class="horizontalNavA" href="default.asp">FEED</a></li>
+                    <li><a class="horizontalNavA" href="news.asp">AUTHORS</a></li>
+                    <li><a class="horizontalNavA" href="contact.asp">EXPLORE</a></li>
+                    <li><a class="horizontalNavA" href="about.asp">BLOG</a></li>
+                    <li><a class="horizontalNavA" href="about.asp">CONTACT</a></li>
+                   
+            </div>
+        </ul>
+
+
+        <ul class="verticalNav">
+            <div class="img-with-text"> 
+
+                <img src="CMRLOGI.jpg" width="125px" height="125px"> 
+                <li><a class="verticalNavA" >HOME</a></li>
+                <li><a class="verticalNavA">CODE</a></li>
+                <li><a class="verticalNavA">EXPERIMENT</a></li>
+            </div>
+
+        </ul>
+
+
+        <div class="mybody">
+
+            <h4> INFIX TO POSTFIX IMPLEMENTATION </h4>
+
+            <div class="infix_div">
+            <p>Enter the Infix Expression</p>
+            <form method="post">
+                <input id="infix" type="text"  name="fname">
+                <button type="button" class='work2' onclick="getit()"  >Convert</button>
+                <p> The postfix expression is: </p>
+                <input type="text" id="test" value=""> 
+
+                
+                <p> Steps </p>
+                <p id='stac' style="width:100% border:1px solid black"></p>
+                
+                
+                
+                
+                
+                
+                
+
+            </form>
+
+                </div>
+   <div id='TextBoxesGroup'>
+                <div id="TextBoxDiv1">
+                <p>  Stack </p>
+                <input type='textbox' id='0' style="border-color: white;">
+                </div>
+         
+            
+    </div>
+
+
+
+
+
+            
+        
+         
+        
+            
+             
+            
+            
+            
+            
+        
+
+
+    <script>
+
+        
+    var messages = ["\nPushing the '(' on Stack " , "\nPutting the operand on postfix string:  ", "\nPushing the operator on stack:  ", "\n Popping the operand as it was greater than incoming operand", "\nPopping operand until '('  is reached ", "\nPopping Remaining content on Stack and putting in postfix string: ", "\nPopping out the '(' "];
+    
+    var st ="";
+     
+    var brr = [];
+    
+    var steps = [];
+        
+    var a = "";
+
+    class Stack 
+    { 
+
+        // Array is used to implement stack 
+        constructor() 
+        { 
+            this.items = []; 
+        } 
+
+
+         // push function 
+         push(element) 
+         { 
+            // push element into the items 
+            this.items.push(element); 
+         } 
+
+
+         pop() 
+         { 
+            // return top most element in the stack 
+            // and removes it from the stack 
+            // Underflow if stack is empty 
+            if (this.items.length == 0) 
+                return "Underflow"; 
+            return this.items.pop(); 
+         }   
+
+         isEmpty() 
+         { 
+            // return true if stack is empty 
+            return this.items.length == 0; 
+         }
+
+
+         printStack() 
+         { 
+            var str = ""; 
+            for (var i = 0; i < this.items.length; i++) 
+                
+                str = this.items[i] + " "; 
+                document.getElementById('stac').value = str;
+             
+         } 
+
+
+
+    // peek function 
+        peek() 
+        { 
+            // return the top most element from the stack 
+            // but does'nt delete it. 
+            return this.items[this.items.length - 1]; 
+        }
+
+    } 
+
+
+
+
+   
+        
+        
+//         var z = check(x);   
+//        if(z){
+//            
+//            var y = addTo(x);
+//            printSentence('test',y);
+//        }
+//            
+//         else{
+//             window.alert("Syntax error");
+//         }
+        
+        
+        function valid(ch)
+        {
+            switch(ch)
+            {
+                 case '+' : 
+                case '-' : 
+                    return 1;
+                case '*' : 
+                case '/' : 
+                    return 1;
+                case '^' : 
+                    return 1;
+                    
+                case ')' : 
+                    return 2;
+                case '(' : 
+                    return 2;    
+                default :
+                    return -1;
+            }
+        }
+
+
+    function getit()
+    {
+        
+        var flag=1;
+        var operand = 0;
+        var operator = 0;
+        var  x = (document.getElementById("infix").value); 
+       
+                if(x.length<=0){
+                    alert("Infix expression cannot be empty") ;
+                    e.preventDefault();
+                }
+       
+     
+        
+       for(var i=0;i<x.length;i++){         
+           if(valid(x[i])>=1 || isOperand(x[i]) )
+               {
+                   flag = 1;
+                   
+               }
+          
+           else { 
+                   flag=0 ;
+                   break;
+               }
+        }
+        
+        if(flag==0)
+            {
+               alert("Invalid operator "); 
+                e.preventDefault();
+            }
+        
+        
+        // check if equal number of openning and closing bracket 
+        // check if equal number of openning and closing bracket 
+        var opening_bracket=0 ;
+        var closing_bracket=0 ;
+        var no_of_char=0 ;
+        var no_of_operator=0;
+        for(var i=0;i<x.length;i++) 
+        {
+                    if(x[i]==="("){
+                        opening_bracket++ ;
+                       }
+                    if(x[i]===")") {
+                        closing_bracket++ ;  
+                      }
+                    if(valid(x[i])==1)
+                       {
+                           no_of_operator++ ;
+                       } 
+                    if(isOperand(x[i]) )
+                        { 
+                             no_of_char++ ;
+                        }
+
+        }
+        
+//        alert(no_of_char);
+//        alert(no_of_operator);
+//        alert(opening_bracket);
+//        alert(closing_bracket);
+         //checking
+       if(opening_bracket!=closing_bracket) {
+           alert("Unequal number of openning and closing paranthesis "); 
+                e.preventDefault();
+       }
+       //checking
+    
+        if(no_of_char!=(no_of_operator+1))
+            {
+                alert("Invalid Expression!! Please check"); 
+                e.preventDefault();
+            }
+        if(no_of_char==0 || no_of_operator==0)
+            {
+                alert("Invalid Expression!! Please check"); 
+                e.preventDefault();
+            }
+        
+       var y = addTo(x);
+        printSentence('test',y);
+
+    }
+
+
+
+
+
+
+
+    //To check whether element is operand or not
+    function isOperand(ch)
+    {
+        return ((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <='Z') || (ch >= '1' && ch <= '9'));
+    }
+
+    //Return the precedence of the operator
+    function prec(ch)
+    {
+        switch(ch)
+        {
+            case '+' : 
+            case '-' : 
+                return 1;
+            case '*' : 
+            case '/' : 
+                return 2;
+            case '^' : 
+                return 3;
+            default :
+                return false;
+        }
+    }
+
+    //Function to convert Infix to Postfix
+    function addTo(infixStr) 
+    {
+
+        var postfixStr = "";
+        
+        var stack = new Stack();
+
+        var count =0;
+        
+        var arr= "";
+        
+        brr.push(" ");
+       
+        
+
+        //loop through the length of the infix string
+        while(count < infixStr.length)
+        {
+            //check of it is operand or not
+            if(isOperand(infixStr[count]))
+            {
+                postfixStr += infixStr[count];
+
+                st= messages[1] ;
+                st+=infixStr[count] ;
+                steps.push(st);
+                
+                
+            } 
+            else 
+            {
+                //if operator is other than ( )
+                if(infixStr[count] !== '(' && infixStr[count] !== ")")
+                {
+                    while(!stack.isEmpty())
+                    {
+                        
+                        //Till the time stack's top operator greater than equal to infixStr operator than add to postfixStr else break
+                        if(prec(stack.peek()) >= prec(infixStr[count]))
+                        {
+                            
+                            postfixStr += stack.pop();
+                             
+                            st=messages[3];
+                                st+infixStr[count] ;
+                                arr = arr.substr(0,arr.length-1);
+                                brr.push(arr);
+                                steps.push(st);
+                            
+                            
+                            
+                            
+                            
+                        } 
+                        else 
+                        {
+                           break;
+                        }
+                    }
+                    //push the current infixStr operator to stack
+                    stack.push(infixStr[count]);
+                    st=messages[2];
+                    st+=infixStr[count] ;
+                    arr+=infixStr[count];
+                    brr.push(arr);
+                    steps.push(st);
+                    
+                    
+                    
+                }
+                else if(infixStr[count] === '(' || infixStr[count] === ")")
+                {
+                    //if infixStr operator is ( than simply push it to stack
+                    if(infixStr[count] === "(")
+                    {
+                        stack.push(infixStr[count]);
+                        st=messages[0];  
+                        steps.push(st);
+                        arr+=infixStr[count];
+                        brr.push(arr);
+                        
+                    } 
+                    else 
+                    {
+                        
+                        
+                        //if infixStr operator is ) than push all the elements from stack to postfixStr till we get ( from stack
+                        while(stack.peek() !== '(')
+                        {
+                            
+                            postfixStr += stack.pop();
+                            st=messages[4];
+                            steps.push(st);
+                            arr = arr.substr(0,arr.length-1);
+                            brr.push(arr);
+                            
+                                            
+                        }
+                        stack.pop();
+                        st+=messages[6];
+                        arr = arr.substr(0,arr.length-1);
+                        brr.push(arr);
+                        
+                        
+                    }
+                } 
+
+            }
+            count++;
+        }
+
+        //Adding the rest of the operand in stack to postfix string
+        while(!stack.isEmpty() && stack.peek() !== '(' && stack.peek() !== ')' )
+        {
+            st=messages[5]+stack.peek();
+            steps.push(st);
+            postfixStr += stack.pop(); 
+            
+            
+            
+         }
+        
+        while(arr !== ""){
+             arr = arr.substr(0,arr.length-1);
+                            brr.push(arr);
+            
+        }
+       
+       brr.push("");
+       steps.push("\n\nConversion Done!!")
+        printSentence2('stac');
+    
+        
+        ran();
+        
+        //printSentence3('s');
+        
+        //document.getElementById('brr').innerHTML = brr;
+        return postfixStr;
+    }
+
+
+    //function which prints the content in a string with delay
+    function printSentence(id,y)
+    {
+
+        var index=0;
+        var intObject= setInterval(function()
+                                        {
+                                        
+                                        document.getElementById(id).value+=y[index]; 
+                                        index++;
+                                        if(index==y.length)
+                                        {
+                                            clearInterval(intObject);
+                                        }
+                                       
+                                    }, 6000);
+    } 
+        
+        
+    function printSentence2(id)
+    {
+
+        var index=0;
+        var intObject= setInterval(function()
+                                        {
+                                        
+                                        document.getElementById(id).innerHTML+=(steps[index]); 
+                                        
+                                        index++;
+                                        if(index==steps.length)
+                                        {
+                                            clearInterval(intObject);
+                                        }
+                                       
+                                    }, 3000);
+    }    
+        
+    
+        
+    
+        
+        
+    function ran(){
+        
+       var index = 0;
+        
+        
+        var x = 3500;
+       var intObject= setInterval(function()
+                                        {
+                                         a = brr[index];
+                                        
+                                        stackprinter();
+                                       index++;
+                                       if(index==brr.length)
+                                        {
+                                            
+                                            
+                                            clearInterval(intObject);
+                                        }
+                                        x*=a.length;
+                                       
+                                    },x);
+            
+           
+            
+            
+         
+        
+        
+        
+    }    
+        
+        
+        
+        
+        
+    function stackprinter (){
+        
+        var index=0;
+        var ind = 10;
+        var id = ind.toString();
+        
+        while(index<a.length){
+                                        
+        document.getElementById(id).value=(a[index]);
+       
+
+        index++;
+        ind--;
+        id = ind.toString();
+
+        }
+        
+        while(ind > 0){
+           id = ind.toString();
+           document.getElementById(id).value=""
+           ind--;
+            
+        }
+        
+        return;
+    }
+    
+        
+        
+        
+        
+        function check(x){
+            
+        
+            if(x.length == 0){
+                alert("Empty String not accepted");
+            }
+             
+            
+            
+                
+            else {return true; }
+        }
+
+        
+//        function isValid(ch){
+//            return ((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <='Z') || (ch >= '1' && ch <= '9') || (ch === '+') || (ch === '-') || (ch === '*') || (ch === '/') || (ch === '^') || (ch === '(') || (ch === ')') );
+//            
+//        }
+
+
+    </script>  
+
+    
+</div>   
+              
+ 
+<!--
+   else{
+                
+                for(var i = 0; i <x.length; i++){
+                   if(!(isValid(i))){
+                       alert("inavlid character");
+                       break;
+                   } 
+                   
+                } 
+                
+            }
+-->
+   
+   
+    
+</body>
+</html>
